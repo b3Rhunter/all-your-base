@@ -1,0 +1,17 @@
+.connect-button {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+  
+    font-size: 18px;
+  
+    padding: 0.5em 1em;
+  
+    min-width: 125px;
+    min-height: 50px;
+  
+    background-color: #110123;
+    border: 1px solid rgb(204, 10, 214);
+    border-radius: 50em;
+    z-index: 999;
+  }

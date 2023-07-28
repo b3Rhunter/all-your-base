@@ -1,0 +1,17 @@
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-block: 100px;
+
+    width: 100%;
+    max-width: 75%;
+    height: 100%;
+}
+
+.nfts {
+    width: 250px;
+}
