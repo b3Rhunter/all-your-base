@@ -7,6 +7,9 @@ import Connect from './components/Connect';
 import Card from './components/Card';
 import Gallery from './components/Gallery';
 import Bridge from './components/Bridge';
+import { ImImages } from 'react-icons/im';
+import { BsFillCartPlusFill } from 'react-icons/bs';
+import { GiBlackBridge } from 'react-icons/gi';
 
 function App() {
   const [_provider, setProvider] = useState(null);
@@ -128,9 +131,9 @@ function App() {
        
         <Router>
         <div className='nav'>
-        <Link to="/gallery">Gallery</Link>
-        <Link to="/card">Mint</Link>
-        <Link to="/bridge">Bridge</Link>
+        <Link to="/gallery"><span><ImImages/></span><span className='nav-text'>Gallery</span></Link>
+        <Link to="/card"><span><BsFillCartPlusFill/></span><span className='nav-text'>Mint</span></Link>
+        <Link to="/bridge"><span><GiBlackBridge/></span><span className='nav-text'>Bridge</span></Link>
         </div>
         <Routes>
         <Route path="/" element={<Card supply={supply} setSupply={setSupply} _provider={_provider} nftBalance={nftBalance} setNFTBalance={setNFTBalance} balance={balance} setBalance={setBalance} contract={contract} userAddress={userAddress} showNotification={showNotification} name={name} />} />
