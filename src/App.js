@@ -136,7 +136,7 @@ function App() {
         <Route path="/" element={<Card supply={supply} setSupply={setSupply} _provider={_provider} nftBalance={nftBalance} setNFTBalance={setNFTBalance} balance={balance} setBalance={setBalance} contract={contract} userAddress={userAddress} showNotification={showNotification} name={name} />} />
         <Route path="/card" element={<Card supply={supply} setSupply={setSupply} _provider={_provider} nftBalance={nftBalance} setNFTBalance={setNFTBalance} balance={balance} setBalance={setBalance} contract={contract} userAddress={userAddress} showNotification={showNotification} name={name} />} />
         <Route path="/gallery" element={<Gallery contract={contract} />} />
-        <Route path="/bridge" element={<Bridge/>} />
+        <Route path="/bridge" element={<Bridge showNotification={showNotification}/>} />
         </Routes>
         </Router>
       
