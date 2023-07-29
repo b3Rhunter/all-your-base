@@ -4,9 +4,9 @@ import { ethers } from 'ethers';
 import Notification from './components/Notification';
 import ABI from './ABI.json';
 import Connect from './components/Connect';
-import Confetti from './components/Confetti';
 import Card from './components/Card';
 import Gallery from './components/Gallery';
+import Bridge from './components/Bridge';
 
 function App() {
   const [_provider, setProvider] = useState(null);
@@ -71,11 +71,11 @@ function App() {
       setContract(_contract);
       const _userAddress = await _signer.getAddress();
       setUserAddress(_userAddress);
-      const _balance = await _provider.getBalance(_userAddress);
+      const _balance = await provider.getBalance(_userAddress);
       setBalance(_balance);
       const _nftBalance = await _contract.balanceOf(_userAddress);
       setNFTBalance(_nftBalance)
-      const _supply = await contract.getTotalSupply()
+      const _supply = await _contract.getTotalSupply()
       setSupply(_supply)
       await _signer.signMessage("All Your Base!");
       const { ethereum } = window;
@@ -130,11 +130,13 @@ function App() {
         <div className='nav'>
         <Link to="/gallery">Gallery</Link>
         <Link to="/card">Mint</Link>
+        <Link to="/bridge">Bridge</Link>
         </div>
         <Routes>
         <Route path="/" element={<Card supply={supply} setSupply={setSupply} _provider={_provider} nftBalance={nftBalance} setNFTBalance={setNFTBalance} balance={balance} setBalance={setBalance} contract={contract} userAddress={userAddress} showNotification={showNotification} name={name} />} />
         <Route path="/card" element={<Card supply={supply} setSupply={setSupply} _provider={_provider} nftBalance={nftBalance} setNFTBalance={setNFTBalance} balance={balance} setBalance={setBalance} contract={contract} userAddress={userAddress} showNotification={showNotification} name={name} />} />
         <Route path="/gallery" element={<Gallery contract={contract} />} />
+        <Route path="/bridge" element={<Bridge/>} />
         </Routes>
         </Router>
       
