@@ -137,6 +137,10 @@ code {
   -webkit-text-fill-color: transparent;
 }
 
+.nav-icons {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .nav {
     font-size: 1.2em;
@@ -144,5 +148,9 @@ code {
   
   .nav-text {
     display: none;
+  }
+
+  .nav-icons {
+    display: block;
   }
 }

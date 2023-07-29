@@ -131,9 +131,9 @@ function App() {
        
         <Router>
         <div className='nav'>
-        <Link to="/gallery"><span><ImImages/></span><span className='nav-text'>Gallery</span></Link>
-        <Link to="/card"><span><BsFillCartPlusFill/></span><span className='nav-text'>Mint</span></Link>
-        <Link to="/bridge"><span><GiBlackBridge/></span><span className='nav-text'>Bridge</span></Link>
+        <Link to="/gallery"><span className='nav-icons'><ImImages/></span><span className='nav-text'>Gallery</span></Link>
+        <Link to="/card"><span className='nav-icons'><BsFillCartPlusFill/></span><span className='nav-text'>Mint</span></Link>
+        <Link to="/bridge"><span className='nav-icons'><GiBlackBridge/></span><span className='nav-text'>Bridge</span></Link>
         </div>
         <Routes>
         <Route path="/" element={<Card supply={supply} setSupply={setSupply} _provider={_provider} nftBalance={nftBalance} setNFTBalance={setNFTBalance} balance={balance} setBalance={setBalance} contract={contract} userAddress={userAddress} showNotification={showNotification} name={name} />} />
