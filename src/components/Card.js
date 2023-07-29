@@ -15,7 +15,7 @@ function Card({supply, setSupply, _provider, contract, userAddress, showNotifica
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
 
-    const tx = await contract.mint(userAddress, name);
+    const tx = await contract.mint(userAddress, name, { value: ethers.utils.parseEther("0.001") });
     await tx.wait()
 
     const tokenId = await contract.getTotalSupply();

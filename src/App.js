@@ -29,7 +29,7 @@ function App() {
       provider = new ethers.providers.Web3Provider(window.ethereum);
       await provider.send("eth_requestAccounts", []);
       const network = await provider.getNetwork();
-      const desiredChainId = '0x14A33';
+      const desiredChainId = '0x2105';
       if (network.chainId !== parseInt(desiredChainId)) {
         try {
           await window.ethereum.request({
@@ -43,14 +43,14 @@ function App() {
                 method: 'wallet_addEthereumChain',
                 params: [{
                   chainId: desiredChainId,
-                  chainName: 'Base Goerli',
+                  chainName: 'Base Mainnet',
                   nativeCurrency: {
                     name: 'ETH',
                     symbol: 'ETH',
                     decimals: 18
                   },
-                  rpcUrls: ['https://goerli.base.org'],
-                  blockExplorerUrls: ['https://goerli.basescan.org'],
+                  rpcUrls: ['https://developer-access-mainnet.base.org'],
+                  blockExplorerUrls: ['https://basescan.org'],
                 }],
               });
             } catch (addError) {
@@ -66,7 +66,7 @@ function App() {
       setProvider(provider)
       const _signer = await provider.getSigner();
       setSigner(_signer)
-      const address = "0xd492e6466F30523368B07375E5d6FD44b05B90aF";
+      const address = "0xd969317f54C8BcDA01b931520B6c81EC9642aBA1";
       const _contract = new ethers.Contract(address, ABI, _signer);
       setContract(_contract);
       const _userAddress = await _signer.getAddress();
